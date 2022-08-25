@@ -1,0 +1,15 @@
+{
+	"compilerOptions": {
+    "target": "ESNext",
+    "strict": true, 
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "resolveJsonModule": true,
+    "outDir": "./lib",
+    "baseUrl": ".",
+    "sourceMap": false,
+    "allowSyntheticDefaultImports": true
+	},
+  "include": ["./src/**/*.ts"],
+  "exclude": ["node_modules","lib","test"]
+}
