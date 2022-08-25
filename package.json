@@ -3,7 +3,6 @@
   "version": "2.0.1",
   "type": "module",
   "dependencies": {
-    "@rollup/plugin-json": "^4.1.0",
     "cheerio": "^1.0.0-rc.12",
     "node-fetch": "^3.2.10",
     "request": "^2.88.2"
