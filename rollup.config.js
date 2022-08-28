@@ -1,5 +1,6 @@
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
+import { terser } from "rollup-plugin-terser";
 
 /** @type {import('rollup').RollupOptions} */
 export default [{
@@ -12,6 +13,10 @@ export default [{
   },
   external: ["node-fetch","cheerio","request"],
   plugins: [
+    terser({
+      compress: true,
+      mangle: true
+    }),
     typescript({
       declaration: true
     }),
