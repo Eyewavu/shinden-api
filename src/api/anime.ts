@@ -84,7 +84,7 @@ export async function scrapeAnimeInfoShinden(url:string):Promise<shindenAnimeDet
   } as shindenTags
   $(".info-top-table-highlight").find(".tags").each(function() {
     const $item = $(this)
-    const _tags =$item.parent().parent().before().text().trim().split(/\n+\s?/)
+    const _tags =$item.parent().parent().before().text().trim().split(/\n+\s?/).filter(i => i)
     const category =_tags.shift()
 
     switch (category) {
