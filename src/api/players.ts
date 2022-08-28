@@ -1,5 +1,5 @@
 import { load } from "cheerio";
-import { fetchFromShinden } from "../utils/fetch";
+import { fetchRawHtml } from "../utils/fetch";
 
 export interface shindenPlayer {
   source: string,
@@ -9,7 +9,7 @@ export interface shindenPlayer {
   id: string,
 }
 export async function scrapeVideoPlayerIdsShinden(link:string):Promise<shindenPlayer[]> {
-  const html =await fetchFromShinden(`https://shinden.pl${link}`)
+  const html =await fetchRawHtml(`https://shinden.pl${link}`)
   const index1 =html.indexOf("episode-player-list")
   const index2 =html.lastIndexOf("player-navigator-section box")
 

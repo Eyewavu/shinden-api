@@ -1,1 +1,1 @@
-export declare function fetchFromShinden(url: string): Promise<string>;
+export declare function fetchRawHtml(url: string): Promise<string>;

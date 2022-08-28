@@ -22,6 +22,6 @@ export async function fixImageUrl(image_url:string,title:string,nsfw:boolean) {
       image_url ="https://shinden.pl" +image_url
     }
   }
-  else image_url ="https://i.ebayimg.com/images/i/252339513231-0-1/s-l1000.jpg"
+  else image_url ="https://st2.depositphotos.com/1865899/10467/v/450/depositphotos_104676254-stock-illustration-under-eighteen-round-sign-adults.jpg"
   return image_url
 }

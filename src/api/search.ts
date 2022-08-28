@@ -1,5 +1,5 @@
 import { load } from "cheerio";
-import { fetchFromShinden } from "../utils/fetch";
+import { fetchRawHtml } from "../utils/fetch";
 import noImageDetector, { areTagsNsfw, fixImageUrl } from "../utils/no_image_detector";
 import parseNumber from "../utils/parse_number";
 
@@ -13,16 +13,12 @@ export interface shindenSearchResult {
   grade: number,
 }
 export async function scrapeSearchShinden(url:string):Promise<shindenSearchResult[]> {
-  const html =await fetchFromShinden(url)
+  const html =await fetchRawHtml(url)
   
   const index =html.indexOf("<article>")
   const index2 =html.lastIndexOf("</article>")
   const $ =load(html.substring(index +9,index2))
 
-  /**
-   * Why the FUCK cheerio is not letting me do this with async
-   * now i have to do this shit with promise Array
-   */
   const promiseArray:Promise<shindenSearchResult>[] =[]
   $(".div-row").each(function() {
     const $item =$(this)

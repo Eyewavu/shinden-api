@@ -1,6 +1,6 @@
 import { load } from "cheerio";
 import { getMonthNamePl } from "../utils/date";
-import { fetchFromShinden } from "../utils/fetch";
+import { fetchRawHtml } from "../utils/fetch";
 import { mpaaToAgeGroup } from "../utils/mpaa";
 import noImageDetector, { areTagsNsfw, fixImageUrl } from "../utils/no_image_detector";
 import parseNumber from "../utils/parse_number";
@@ -71,7 +71,7 @@ export interface shindenCharacter {
 }
 
 export async function scrapeAnimeInfoShinden(url:string):Promise<shindenAnimeDetails> {
-  const html =await fetchFromShinden(`https://shinden.pl${url}`)
+  const html =await fetchRawHtml(`https://shinden.pl${url}`)
   const $ =load(html)
 
   const tags ={

@@ -8,7 +8,7 @@ const headers ={
   "Accept-Language": "pl-PL,pl;q=0.9,en-US;q=0.8,en,q=0.7"
 }
 
-export async function fetchFromShinden(url: string):Promise<string> {
+export async function fetchRawHtml(url: string):Promise<string> {
   const response =await fetch(url,{headers})
   if ( !response.ok ) throw new Error(response.statusText)
 

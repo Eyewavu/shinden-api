@@ -1,5 +1,5 @@
 import { load } from "cheerio";
-import { fetchFromShinden } from "../utils/fetch";
+import { fetchRawHtml } from "../utils/fetch";
 
 export interface shindenEpisodeListItem {
   link: string,
@@ -10,7 +10,7 @@ export interface shindenEpisodeListItem {
   avaiable: boolean,
 }
 export async function scrapeAllEpisodesShinden(link:string):Promise<shindenEpisodeListItem[]> {
-  const html =await fetchFromShinden(`https://shinden.pl${link}/episodes`)
+  const html =await fetchRawHtml(`https://shinden.pl${link}/episodes`)
   const index1 =html.indexOf("table")
   const index2 =html.lastIndexOf("/table")
 
