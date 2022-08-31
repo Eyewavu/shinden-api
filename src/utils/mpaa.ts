@@ -9,6 +9,7 @@ export function mpaaToAgeGroup(input:string|mpaaRating):ageRating|undefined {
     case "R":
     case "R+": return "16+"
     case "NC-17":
+    case "Rx":
     case "RY": return "18+"
   }
 }
